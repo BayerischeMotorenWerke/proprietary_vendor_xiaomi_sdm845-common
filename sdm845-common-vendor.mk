@@ -190,6 +190,7 @@ PRODUCT_PACKAGES += \
     audio.primary.sdm845 \
     sound_trigger.primary.sdm845 \
     vendor.qti.hardware.bluetooth_audio@2.0-impl \
+    vendor.qti.hardware.bluetooth_audio@2.1-impl \
     libFileMux_proprietary \
     libOmxVideoDSMode \
     libOmxVpp \
@@ -206,6 +207,7 @@ PRODUCT_PACKAGES += \
     libaudioroute_ext \
     libbatterylistener \
     libbluetooth_audio_session_qti \
+    libbluetooth_audio_session_qti_2_1 \
     libcapiv2svacnn \
     libcapiv2vop \
     libcomprcapture \
@@ -268,8 +270,9 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl-qti \
     vendor.qti.esepowermanager@1.0-impl \
     vendor.qti.hardware.alarm@1.0-impl \
-    vendor.qti.hardware.bluetooth_sar@1.0-impl \
+    vendor.qti.hardware.bluetooth_sar@1.1-impl \
     vendor.qti.hardware.btconfigstore@1.0-impl \
+    vendor.qti.hardware.btconfigstore@2.0-impl \
     vendor.qti.hardware.capabilityconfigstore@1.0-impl \
     vendor.qti.hardware.fm@1.0-impl \
     vendor.qti.hardware.qteeconnector@1.0-impl \
@@ -363,6 +366,7 @@ PRODUCT_PACKAGES += \
     libsecureui_svcsock \
     libsensorcal \
     libsettings \
+    libsoc_helper \
     libspcom \
     libspl \
     libssd \
@@ -396,6 +400,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.esepowermanager@1.0 \
     vendor.qti.hardware.alarm@1.0 \
     vendor.qti.hardware.bluetooth_sar@1.0 \
+    vendor.qti.hardware.bluetooth_sar@1.1 \
     vendor.qti.hardware.data.cne.internal.api@1.0 \
     vendor.qti.hardware.data.cne.internal.constants@1.0 \
     vendor.qti.hardware.data.cne.internal.server@1.0 \
