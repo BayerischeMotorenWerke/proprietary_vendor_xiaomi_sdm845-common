@@ -6590,6 +6590,31 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libhta_hexagon_runtime",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libhta_hexagon_runtime.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libcdsprpc",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libhydra_common",
     owner: "xiaomi",
     strip: {
@@ -8565,7 +8590,7 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "liblog",
-                "libprotobuf-cpp-full-vendorcompat",
+                "libprotobuf-cpp-full-3.9.1-vendorcompat",
                 "libc++",
                 "libc",
                 "libm",
@@ -8594,7 +8619,6 @@ cc_prebuilt_library_shared {
                 "libhardware",
                 "libhidlbase",
                 "libhidlmemory",
-                "libhidltransport",
                 "libui",
                 "liblog",
                 "libnativewindow",
@@ -8604,9 +8628,35 @@ cc_prebuilt_library_shared {
                 "android.hardware.neuralnetworks@1.0",
                 "android.hardware.neuralnetworks@1.1",
                 "android.hardware.neuralnetworks@1.2",
+                "android.hardware.neuralnetworks@1.3",
                 "android.hidl.safe_union@1.0",
                 "android.hidl.allocator@1.0",
                 "android.hidl.memory@1.0",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "unnhal-acc-hta",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/unnhal-acc-hta.so",
+            ],
+            shared_libs: [
+                "liblog",
                 "libc++",
                 "libc",
                 "libm",
@@ -8635,12 +8685,12 @@ cc_prebuilt_library_shared {
                 "libhardware",
                 "libhidlbase",
                 "libhidlmemory",
-                "libhidltransport",
                 "liblog",
                 "libutils",
                 "libcutils",
                 "android.hidl.allocator@1.0",
                 "android.hidl.memory@1.0",
+                "libcdsprpc",
                 "libc++",
                 "libc",
                 "libm",
@@ -12867,6 +12917,24 @@ dex_import {
     system_ext_specific: true,
 }
 
+prebuilt_etc_xml {
+    name: "android.hardware.neuralnetworks@1.3-service-qti-hta.xml",
+    owner: "xiaomi",
+    src: "proprietary/vendor/etc/vintf/manifest/android.hardware.neuralnetworks@1.3-service-qti-hta.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
+    soc_specific: true,
+}
+
+prebuilt_etc_xml {
+    name: "android.hardware.neuralnetworks@1.3-service-qti.xml",
+    owner: "xiaomi",
+    src: "proprietary/vendor/etc/vintf/manifest/android.hardware.neuralnetworks@1.3-service-qti.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
+    soc_specific: true,
+}
+
 cc_prebuilt_binary {
     name: "ATFWD-daemon",
     owner: "xiaomi",
@@ -13236,19 +13304,18 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_binary {
-    name: "android.hardware.neuralnetworks@1.2-service-qti",
+    name: "android.hardware.neuralnetworks@1.3-service-qti",
     owner: "xiaomi",
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/vendor/bin/hw/android.hardware.neuralnetworks@1.2-service-qti",
+                "proprietary/vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-qti",
             ],
             shared_libs: [
                 "libbase",
                 "libhardware",
                 "libhidlbase",
                 "libhidlmemory",
-                "libhidltransport",
                 "liblog",
                 "libutils",
                 "libcutils",
@@ -13257,10 +13324,12 @@ cc_prebuilt_binary {
                 "android.hardware.neuralnetworks@1.0",
                 "android.hardware.neuralnetworks@1.1",
                 "android.hardware.neuralnetworks@1.2",
+                "android.hardware.neuralnetworks@1.3",
                 "android.hidl.safe_union@1.0",
                 "android.hidl.allocator@1.0",
                 "android.hidl.memory@1.0",
-                "libprotobuf-cpp-full-vendorcompat",
+                "libprotobuf-cpp-full-3.9.1-vendorcompat",
+                "libsync",
                 "libc++",
                 "libc",
                 "libm",
